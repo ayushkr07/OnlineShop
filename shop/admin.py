@@ -1,6 +1,14 @@
 from django.contrib import admin
 
-from shop.models.product import ProductImages , Product
+from shop.models.product import ProductImages, Product
 
-admin.site.register(Product)
-admin.site.register(ProductImages)
+
+class ProductImageModel(admin.StackedInline):
+    model = ProductImages
+
+
+class ProductModel(admin.ModelAdmin):
+    inlines = [ProductImageModel]
+
+
+admin.site.register(Product, ProductModel)
