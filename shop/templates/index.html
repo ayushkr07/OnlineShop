@@ -13,11 +13,11 @@
                 <img src="{{product.thumbnail.url}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h4>{{product.name|title}}</h4>
-                    <p class="text-info p-0 m-0">You Save: {{product.discount|rupee}}</p>
+                    <p class="text-info p-0 m-0">Save: {{product.discount}}%</p>
                     <p>Price: <del class="text-danger">{{product.price|rupee}}</del> {{product|discounted_price|rupee}}</p>
                 </div>
                 <div class="card-footer p-0">
-                    <a href="#" class="btn btn-light btn-block">Show More</a>
+                    <a href="product/{{product.id}}/" class="btn btn-light btn-block">Show More</a>
                 </div>
             </div>
         </div>
