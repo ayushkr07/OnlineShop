@@ -6,19 +6,13 @@
 
 {% block content %}
 <div class="container mt-4 p-4">
-    <style>
-        .display-8{
-        font-size:20px;
-        font-weight:300;
-        }
-    </style>
     <div class="row">
         <div class="col-5">
-            <img alt="" class="img-fluid rounded border" src="{{product.thumbnail.url}}">
-            <div class="row">
+            <img alt="" class="img-fluid rounded border" id="mainImage" src="{{product.thumbnail.url}}">
+            <div class="row mt-5">
                 {% for i in product.images.all %}
                 <div class="col">
-                    <img src="{{i.image.url}}" class="img-thumbnail" alt="">
+                    <img onclick="changeImage(event)"; src="{{i.image.url}}" class="img-thumbnail" alt="">
                 </div>
                 {% endfor %}
             </div>

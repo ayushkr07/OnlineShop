@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Product,ProductImages
 
 def index(request):
-    products=Product.objects.all()
+    products=Product.objects.filter(active=True)
     context={
         'products': products
     }
