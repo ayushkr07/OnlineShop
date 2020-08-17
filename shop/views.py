@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Product
+from .models import Product,ProductImages
 
 def index(request):
     products=Product.objects.all()
